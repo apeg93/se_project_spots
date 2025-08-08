@@ -27,7 +27,14 @@
 }
 
 .profile__add-btn {
+  margin-top: 138px;
   margin-left: auto;
+  height: 52px;
+  width: 149px;
+  border: none;
+  color: #fcf5e5;
+  background-color: #212121;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 627px) {

@@ -5,6 +5,10 @@
   display: block;
 }
 
+.card__title {
+  font-size: 20px;
+}
+
 .card__content {
   display: flex;
   align-items: center;
