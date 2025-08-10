@@ -17,7 +17,7 @@
 }
 
 .profile__name {
-  margin: 0 0 12px;
+  padding-bottom: 12px;
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
@@ -37,7 +37,7 @@
 
 .profile__edit-btn {
   padding: 0px;
-  margin-top: 120px;
+  margin-top: 108px;
   font-size: 16px;
   opacity: 0.7;
   border: none;
@@ -80,7 +80,7 @@
 
   .profile__name {
     font-size: 20px;
-    margin: 0 0 6px;
+    padding-bottom: 6px;
     max-width: 288px;
   }
 
