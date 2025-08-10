@@ -18,7 +18,7 @@
   opacity: 0.7;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 630px) {
   .footer {
     max-width: 288px;
   }

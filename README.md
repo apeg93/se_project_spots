@@ -1,21 +1,42 @@
-# Project 3: Spots
+# ​ Spots
 
-### Overview  
+## Intro
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+**Spots** is a sleek, interactive image-sharing web app inspired by platforms like Instagram and Pinterest. It’s focused on simplicity and visual storytelling, making it easy for users to upload photos, like posts, and customize their profile.
+
+---
+
+## Description
+
+With **Spots**, users can:
+
+- Add and remove photos
+- Like photos from other users
+- Make minor profile adjustments
+
+It’s built as a front-end project to practice HTML, CSS, Git, and deployment on GitHub Pages.
+
+---
+
+## Figma Design
+
+The visual layout and UI prototypes were crafted in **Figma**:  
+[View the Figma Design](https://www.figma.com/design/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project--Spots?node-id=2-60&t=MxjqJ4i5xx3o0g3y-0)
+
+---
+
+## Technologies & Techniques Used
+
+- **HTML5** – Semantic webpage structure
+- **CSS3** – Styling, layout, and responsiveness
+- **Git & Git Bash** – Version control and command-line usage
+- **GitHub** – Code hosting
+- **GitHub Pages** – Live hosting and deployment
+
+---
+
+---
+
+## Live Demo
+
+🔗 [View Spots on GitHub Pages](https://apeg93.github.io/se_project_spots/)
