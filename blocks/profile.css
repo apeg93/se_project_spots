@@ -93,6 +93,12 @@
     margin: 0 0 20px;
   }
 
+  .profile__edit-btn {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
   .profile__add-btn {
     margin: 0;
   }
