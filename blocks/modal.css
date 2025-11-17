@@ -81,13 +81,8 @@
 }
 
 @media screen and (max-width: 630px) {
-  .modal__container {
-    padding: 12px;
-  }
-
   .modal__title {
     font-size: 20px;
-    width: 236px;
   }
 
   .modal__form {
@@ -95,13 +90,11 @@
   }
 
   .modal__input {
-    width: 276px;
+    box-sizing: border-box;
     font-size: 16px;
   }
 
   .modal__submit-btn {
     max-width: none;
-    width: 276px;
-    height: 52px;
   }
 }
