@@ -9,11 +9,12 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-// New Post Modal Elements go here
-
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostImageInput = newPostModal.querySelector("#card-image-input");
+const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -43,4 +44,13 @@ function handleEditProfileSubmit(evt) {
   editProfileModal.classList.remove("modal_is-opened");
 }
 
+function handleNewPostSubmit(evt) {
+  evt.preventDefault();
+  console.log(newPostImageInput.value, newPostCaptionInput.value);
+
+  newPostModal.classList.remove("modal_is-opened");
+}
+
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+newPostForm.addEventListener("submit", handleNewPostSubmit);
