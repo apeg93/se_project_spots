@@ -6,21 +6,28 @@
   border-radius: 8px;
 }
 
-.card__title {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-}
-
 .card__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.card__title {
+  margin: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .card__like-button {
-  padding-right: 16px;
+  padding: 0;
   background-image: url(../images/Union.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 23px;
   height: 20px;
   border: none;
@@ -41,6 +48,7 @@
 
   .card__title {
     font-size: 16px;
+    line-height: 1.2;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
