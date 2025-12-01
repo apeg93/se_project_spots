@@ -33,6 +33,7 @@ The visual layout and UI prototypes were crafted in **Figma**:
 
 - **HTML5** – Semantic webpage structure
 - **CSS3** – Styling, layout, and responsiveness
+- **JavaScript** – Interactivity and dynamic content
 - **Git & Git Bash** – Version control and command-line usage
 - **GitHub** – Code hosting
 - **GitHub Pages** – Live hosting and deployment
