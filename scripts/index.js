@@ -110,10 +110,7 @@ function handleNewPostSubmit(evt) {
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
-newPostForm.addEventListener("submit", function (evt) {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
-});
+newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
