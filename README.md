@@ -37,6 +37,7 @@ The visual layout and UI prototypes were crafted in **Figma**:
 - **Git & Git Bash** – Version control and command-line usage
 - **GitHub** – Code hosting
 - **GitHub Pages** – Live hosting and deployment
+- **Figma** - Used to review and follow the project design specifications provided by TripleTen
 
 ---
 
