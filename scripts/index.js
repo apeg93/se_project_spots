@@ -1,3 +1,4 @@
+// Initial card data
 const initialCards = [
   {
     name: "Val Thornes",
@@ -30,6 +31,7 @@ const initialCards = [
   },
 ];
 
+// Modal open/close functions
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -38,6 +40,7 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+// DOM element selections
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -49,9 +52,11 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input",
 );
 
+// Profile elements
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
+// New post modal elements
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
@@ -59,12 +64,15 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+// Card template selection
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
+// Cards list container
 const cardsList = document.querySelector(".cards__list");
 
+// Function to create a card element
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -77,6 +85,7 @@ function getCardElement(data) {
   return cardElement;
 }
 
+// Event listeners for opening and closing modals
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
@@ -95,6 +104,7 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+// Form submission handlers
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
@@ -108,10 +118,12 @@ function handleNewPostSubmit(evt) {
   closeModal(newPostModal);
 }
 
+// Attach form submission event listeners
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
+// Render initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
