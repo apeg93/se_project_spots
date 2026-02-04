@@ -85,6 +85,11 @@ function getCardElement(data) {
   return cardElement;
 }
 
+// New card form elements
+const addCardFormEl = document.querySelector("#new-post-modal .modal__form");
+const captionInputEl = addCardFormEl.querySelector("#card-caption-input");
+const linkInputEl = addCardFormEl.querySelector("#card-image-input");
+
 // Event listeners for opening and closing modals
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
@@ -104,7 +109,6 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-// Form submission handlers
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
@@ -123,8 +127,22 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
+// Handle new card form submission
+addCardFormEl.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  const cardElement = getCardElement({
+    name: captionInputEl.value,
+    link: linkInputEl.value,
+  });
+
+  cardsList.prepend(cardElement);
+});
+
 // Render initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
+
+// Note: Form validation code is assumed to be handled in a separate script as per the project structure.
