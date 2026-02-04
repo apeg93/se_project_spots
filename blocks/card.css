@@ -11,12 +11,15 @@
 }
 
 .card__delete-button {
+  /* TODO - Styles for the delete button */
   width: 32px;
   height: 32px;
   position: absolute;
   top: 10px;
   right: 10px;
 }
+
+/* TODO - hover effect for delete button can be added here */
 
 .card__content {
   padding-top: 12px;

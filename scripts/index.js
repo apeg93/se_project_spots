@@ -152,4 +152,4 @@ initialCards.forEach(function (item) {
   cardsList.append(cardElement);
 });
 
-// Note: Form validation code is assumed to be handled in a separate script as per the project structure.
+// Note: Form validation code is assumed to be handled in a separate script as per the project structure
