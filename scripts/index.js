@@ -139,6 +139,8 @@ addCardFormEl.addEventListener("submit", function (evt) {
   cardsList.prepend(cardElement);
 });
 
+//Add card like button Eevnt Listener
+
 // Render initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
