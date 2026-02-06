@@ -138,15 +138,19 @@
 
 .modal__caption {
   background-color: #212121;
-  color: white;
+  color: #fff;
   font-size: 20px;
   margin: 8px 0 0;
   border-radius: 8px;
-  width: 214px;
   height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 12px;
+  display: inline-block;
+  max-width: 214px;
+  line-height: 32px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 630px) {
@@ -190,8 +194,9 @@
   }
 
   .modal__caption {
-    width: 175px;
+    max-width: 175px;
     height: 27px;
     font-size: 16px;
+    line-height: 27px;
   }
 }

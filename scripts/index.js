@@ -1,4 +1,3 @@
-// Initial card data
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -36,7 +35,6 @@ const initialCards = [
   },
 ];
 
-// Modal open/close functions
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -45,7 +43,6 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-// DOM element selections
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -57,11 +54,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input",
 );
 
-// Profile elements
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
-// New post modal elements
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
@@ -69,15 +64,17 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
-// Card template selection
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__preview-btn");
+const previewModalImage = previewModal.querySelector(".modal__image");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
+
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
-// Cards list container
 const cardsList = document.querySelector(".cards__list");
 
-// Function to create a card element
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -95,17 +92,27 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
+    cardElement = null;
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+
+    previewModalCloseBtn.addEventListener("click", () => {
+      closeModal(previewModal);
+    });
   });
 
   return cardElement;
 }
 
-// New card form elements
 const addCardFormEl = document.querySelector("#new-post-modal .modal__form");
 const captionInputEl = addCardFormEl.querySelector("#card-caption-input");
 const linkInputEl = addCardFormEl.querySelector("#card-image-input");
 
-// Event listeners for opening and closing modals
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
@@ -137,12 +144,10 @@ function handleNewPostSubmit(evt) {
   closeModal(newPostModal);
 }
 
-// Attach form submission event listeners
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
-// Handle new card form submission
 addCardFormEl.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
@@ -154,12 +159,7 @@ addCardFormEl.addEventListener("submit", function (evt) {
   cardsList.prepend(cardElement);
 });
 
-//Add card like button Eevnt Listener
-
-// Render initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
-
-// Note: Form validation code is assumed to be handled in a separate script as per the project structure
