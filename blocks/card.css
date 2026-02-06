@@ -55,11 +55,7 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
-}
-
-.card__like-button:hover {
-  opacity: 100%;
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .card__like-button_active {
@@ -67,8 +63,15 @@
   opacity: 100%;
 }
 
-.card__like-button_active:hover {
-  opacity: 50%;
+@media (hover: hover) and (pointer: fine) {
+  .card__like-button:hover {
+    opacity: 100%;
+    cursor: pointer;
+  }
+
+  .card__like-button_active:hover {
+    opacity: 50%;
+  }
 }
 
 @media screen and (max-width: 630px) {
@@ -83,9 +86,5 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-  }
-
-  .card__like-button_active {
-    background-image: url(../images/liked.svg);
   }
 }
