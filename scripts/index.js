@@ -3,32 +3,26 @@ const initialCards = [
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
-
   {
     name: "Val Thornes",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
-
   {
     name: "Restaurant terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
-
   {
     name: "An outdoor cafe",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
-
   {
     name: "A very long bridge, over the forest and through the trees",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
-
   {
     name: "Tunnel with morning light",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
-
   {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -65,7 +59,7 @@ const newPostImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 const previewModal = document.querySelector("#preview-modal");
-const previewModalCloseBtn = previewModal.querySelector(".modal__preview-btn");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
 
@@ -92,7 +86,6 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -100,35 +93,31 @@ function getCardElement(data) {
     previewModalImage.alt = data.name;
     previewModalCaption.textContent = data.name;
     openModal(previewModal);
-
-    previewModalCloseBtn.addEventListener("click", () => {
-      closeModal(previewModal);
-    });
   });
 
   return cardElement;
 }
 
-const addCardFormEl = document.querySelector("#new-post-modal .modal__form");
-const captionInputEl = addCardFormEl.querySelector("#card-caption-input");
-const linkInputEl = addCardFormEl.querySelector("#card-image-input");
-
-editProfileBtn.addEventListener("click", function () {
+editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
+editProfileCloseBtn.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-newPostBtn.addEventListener("click", function () {
+newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-newPostCloseBtn.addEventListener("click", function () {
+newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
+});
+
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 function handleEditProfileSubmit(evt) {
@@ -140,26 +129,21 @@ function handleEditProfileSubmit(evt) {
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostImageInput.value, newPostCaptionInput.value);
+
+  const cardElement = getCardElement({
+    name: newPostCaptionInput.value,
+    link: newPostImageInput.value,
+  });
+
+  cardsList.prepend(cardElement);
+  newPostForm.reset();
   closeModal(newPostModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
-addCardFormEl.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-
-  const cardElement = getCardElement({
-    name: captionInputEl.value,
-    link: linkInputEl.value,
-  });
-
-  cardsList.prepend(cardElement);
-});
-
-initialCards.forEach(function (item) {
+initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });

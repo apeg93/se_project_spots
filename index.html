@@ -18,6 +18,7 @@
       <header class="header">
         <img src="./images/spots-logo.svg" alt="logo" class="header__logo" />
       </header>
+
       <main class="content">
         <section class="profile page__section">
           <img
@@ -25,9 +26,11 @@
             alt="Bessie Coleman"
             class="profile__avatar"
           />
+
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
+
             <button type="button" class="button profile__edit-btn">
               <img
                 class="button__icon"
@@ -37,6 +40,7 @@
               Edit Profile
             </button>
           </div>
+
           <button type="button" class="button profile__add-btn">
             <img
               class="button__icon"
@@ -48,6 +52,7 @@
             New Post
           </button>
         </section>
+
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
@@ -63,13 +68,16 @@
           </ul>
         </section>
       </main>
+
       <footer class="footer">
         <p class="footer__copyright">© 2025 Angel Peguero Jr</p>
       </footer>
+
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
+
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
@@ -78,8 +86,12 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
+                minlength="2"
+                maxlength="40"
               />
             </label>
+
             <label for="profile-description-input" class="modal__label">
               Description
               <input
@@ -87,16 +99,22 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
+                minlength="2"
+                maxlength="200"
               />
             </label>
+
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
+
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
+
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
               Image link
@@ -105,8 +123,10 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
+
             <label for="card-caption-input" class="modal__label">
               Caption
               <input
@@ -114,23 +134,29 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
+                minlength="2"
+                maxlength="30"
               />
             </label>
+
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
+
       <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
           <button
             type="button"
-            class="modal__preview-btn modal__close_type_preview"
+            class="modal__close-btn modal__close-btn_type_preview"
           ></button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
         </div>
       </div>
     </div>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -35,6 +35,9 @@
 
 .modal__close-btn {
   background-image: url(../images/Close\ Icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   position: absolute;
   top: 32px;
   right: 50px;
@@ -51,26 +54,13 @@
   opacity: 0.8;
 }
 
-.modal__preview-btn {
+.modal__close-btn_type_preview {
   background-image: url(../images/Close\ Icon.svg);
-  position: absolute;
-  top: 32px;
-  right: 50px;
-  height: 40px;
-  width: 40px;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-.modal__close_type_preview {
   top: 0px;
   right: -52.5px;
-  color: white;
 }
 
-.modal__close_type_preview:hover {
+.modal__close-btn_type_preview:hover {
   opacity: 0.4;
 }
 
@@ -163,7 +153,7 @@
     right: 12px;
   }
 
-  .modal__close_type_preview {
+  .modal__close-btn_type_preview {
     top: -48px;
     right: 0px;
   }
