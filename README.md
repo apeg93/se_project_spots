@@ -4,7 +4,7 @@
 
 ### Spots Project Demo video
 
-Watch the video here: [Project Demo Video](https://youtu.be/zMyyaxCpBag?si=P1xwwPJetF2q0biS)
+Watch the video here: [Project Demo Video](https://drive.google.com/file/d/1gJQXb1dujOVPcNSRLv3WhvWI4R4nqgvZ/view?usp=drive_link)
 
 **Spots** is a sleek, interactive image-sharing web app inspired by platforms like Instagram and Pinterest. It’s focused on simplicity and visual storytelling, making it easy for users to upload photos, like posts, and customize their profile.
 
