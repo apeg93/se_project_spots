@@ -167,7 +167,7 @@ function handleNewPostSubmit(evt) {
 
   cardsList.prepend(cardElement);
   newPostForm.reset();
-  disableButtton(newPostSubmitBtn, editProfileSubmitBtn, config);
+  disableButton(newPostSubmitBtn, editProfileSubmitBtn, config);
   closeModal(newPostModal);
 }
 

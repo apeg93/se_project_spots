@@ -54,7 +54,7 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
   flex-shrink: 0;
 }
 
